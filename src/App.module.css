@@ -10,3 +10,12 @@ body{
     border-radius: .5rem;
     box-shadow: 0 2px 12px rgba(177, 149, 198, 0.2);
 }
+
+.user{
+    background-color: #FDFDFD;
+    width: 40rem;
+    max-width: 90%;
+    margin: 3rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
