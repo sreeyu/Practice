@@ -33,7 +33,7 @@ function UserForm(props){
             <label>Username:</label>
             <input value={username} type="text" onChange={getUsername} />
             <label>Age(Years):</label>
-            <input value={userAge} type="number" min={13} onChange={getUserAge} />
+            <input value={userAge} type="number" onChange={getUserAge} />
             <Button type='submit' >Add User</Button>
         </form>
     );

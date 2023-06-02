@@ -13,14 +13,22 @@ function App() {
 
   const [popup, setPopup] = useState(false);
 
+  const [issue, setIssue] = useState('');
+
   const getUser = (newUser) => {
-    if(newUser.name === '' || newUser.age === ''){
-      setPopup(true);
-    }
-    else{
+    if(newUser.name.length > 0 && newUser.age > 0){
       setUserList(prevList => {
         return [newUser, ...prevList]
       })
+      
+    }
+    else if (newUser.name.length > 0 && newUser.age <= 0){
+      setIssue('age-inv');
+      setPopup(true);
+    }
+    else{
+      setIssue('empty');
+      setPopup(true);
     }
   }
 
@@ -36,7 +44,7 @@ function App() {
       <section className={styles.user} >
         <UserList users={usersList} />
       </section>
-      {popup && <PopupBox className={styles.popups} popAction={closePopup}/>}
+      {popup && <PopupBox className={styles.popups} popContent={issue} popAction={closePopup}/>}
     </div>
   );
 }
