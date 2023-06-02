@@ -17,9 +17,15 @@ function App() {
     if(newUser.name === '' || newUser.age === ''){
       setPopup(true);
     }
-    setUserList(prevList => {
-      return [newUser, ...prevList]
-    })
+    else{
+      setUserList(prevList => {
+        return [newUser, ...prevList]
+      })
+    }
+  }
+
+  const closePopup = () =>{
+    setPopup(false);
   }
   
   return (
@@ -30,7 +36,7 @@ function App() {
       <section className={styles.user} >
         <UserList users={usersList} />
       </section>
-      {popup && <PopupBox className={styles.popups} />}
+      {popup && <PopupBox className={styles.popups} popAction={closePopup}/>}
     </div>
   );
 }
