@@ -5,7 +5,7 @@ function UserList(props){
     return(
         <ul className={styles['user-list']} >
             {props.users.map(user => (
-                <UserInfo >
+                <UserInfo key={user.id} id={user.id} >
                     {user.name} ({user.age} years old)
                 </UserInfo>
             ))}
