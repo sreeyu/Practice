@@ -1,42 +1,40 @@
 .container{
-    position: absolute;
+    position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
     background-color: rgba(0, 0, 0, 0.7);
-    transition: all 0.4s;
-    
 }
 
 .popup{
+    position: fixed;
     background-color: #FDFDFD;
-    width: 42rem;
-    max-width: 90%;
-    height: 10.5rem;
-    margin: 15rem auto;
-    padding: 0;
-    border-radius: 0.5rem;
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    overflow: hidden;
+    border-radius: .5rem;
 }
 
 .popup-header{
     background-color: #a182d3;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     color: whitesmoke;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
 }
-
 .popup-content{
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 }
 
 .ok-button{
+    display: flex;
+    justify-content: center;
     background-color: #a182d3;
     border: 1px solid #FAEAFF;
-    margin: 0 1rem 0rem 37rem;
-    padding: 0.3rem 1rem;
+    padding: 1rem;
     font-size: 16px;
     color: whitesmoke;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.10);
@@ -52,3 +50,10 @@
     border-color: #FAEAFF;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);
 }
+
+@media (min-width: 768px) {
+    .popup {
+      left: calc(50% - 20rem);
+      width: 40rem;
+    }
+  }
