@@ -37,7 +37,7 @@ function App() {
   }
   
   return (
-    <div>
+    <React.Fragment>
       <section className={styles.form} >
         <UserForm onInput={getUser} />
       </section>
@@ -45,7 +45,7 @@ function App() {
         <UserList users={usersList} />
       </section>
       {popup && <PopupBox className={styles.popups} popContent={issue} popAction={closePopup}/>}
-    </div>
+    </React.Fragment>
   );
 }
 

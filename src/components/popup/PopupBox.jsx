@@ -19,13 +19,13 @@ function PopupBox(props){
 
     return(
         <Wrapper>
-        <div className={styles.container}>
-            <div className={styles.popup}>
-                <h1 className={styles['popup-header']}>Invalid Input</h1>
-                <p className={styles['popup-content']}>{content}</p>
-                <button className={styles['ok-button']} onClick={close}>Okay</button>
+            <div className={styles.container}>
+                <div className={styles.popup}>
+                    <h1 className={styles['popup-header']}>Invalid Input</h1>
+                    <p className={styles['popup-content']}>{content}</p>
+                    <button className={styles['ok-button']} onClick={close}>Okay</button>
+                </div>
             </div>
-        </div>
         </Wrapper>
     );
 };
