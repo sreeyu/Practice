@@ -1,3 +1,4 @@
+import Wrapper from '../helper/Wrapper';
 import styles from './PopupBox.module.css'
 
 function PopupBox(props){
@@ -17,6 +18,7 @@ function PopupBox(props){
     }
 
     return(
+        <Wrapper>
         <div className={styles.container}>
             <div className={styles.popup}>
                 <h1 className={styles['popup-header']}>Invalid Input</h1>
@@ -24,6 +26,7 @@ function PopupBox(props){
                 <button className={styles['ok-button']} onClick={close}>Okay</button>
             </div>
         </div>
+        </Wrapper>
     );
 };
 
