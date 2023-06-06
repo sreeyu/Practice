@@ -1,39 +1,32 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import styles from './UserForm.module.css';
 import Button from './Button';
 
 function UserForm(props){
 
-    const [username, setUsername] = useState('');
-    const [userAge, setUserAge] = useState('');
 
-    const getUsername = (event) => {
-        setUsername(event.target.value);
-    }
-
-    const getUserAge = (event) => {
-        setUserAge(event.target.value);
-    }
+    const inputNameRef = useRef();
+    const inputAgeRef = useRef();
 
     const getUserData = (event) => {
         event.preventDefault();
 
         const userData = {
-            name: username,
-            age: +userAge,
+            name: inputNameRef.current.value,
+            age: +inputAgeRef.current.value,
             id: Math.random().toString()
         };
         props.onInput(userData);
-        setUsername('');
-        setUserAge('');
+        inputNameRef.current.value = '';
+        inputAgeRef.current.value = '';
     }
 
     return(
         <form onSubmit={getUserData} className={styles["user-form"]}>
             <label>Username:</label>
-            <input value={username} type="text" onChange={getUsername} />
+            <input type="text" ref={inputNameRef} />
             <label>Age(Years):</label>
-            <input value={userAge} type="number" onChange={getUserAge} />
+            <input type="number" ref={inputAgeRef} />
             <Button type='submit' >Add User</Button>
         </form>
     );
